@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myBio';
+  logo = 'assets/logo2.png';
+
+  panier = {
+    "nbItems":0
+  };
 }

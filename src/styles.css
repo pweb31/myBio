@@ -1,1 +1,118 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #444;
+}
+hr {
+    border: 0;
+    background-color: #333;
+    height: 1px;
+}
+a {
+    color: inherit;
+    text-decoration: underline;
+}
+a:hover { text-decoration: none }
+a:visited { color: inherit }
+img { border: none }
+input, select { margin: 5px }
+li { margin: 10px 0 }
+label { line-height: 30px }
+label.error {
+    font-size: smaller;
+    line-height: 20px;
+    font-style: italic;
+}
+#principale { background: #E1FD92 }
+#colonneUnique {
+    margin: 20px 30px;
+    text-align: left;
+}
+.fonce { background-color: #93FD95 }
+.fond { background-color: #E1FD92 }
+.bulle {
+    font-weight: bold;
+    padding: 5px;
+    color: inherit;
+    display: inline;
+    border-radius: 4px;
+}
+.margeH { margin: 0 30px }
+.petitTexte { font-size: small }
+.tresPetitTexte { font-size: xx-small }
+.enTete {
+    background-color: #E1FD92;
+    height: 30px;
+}
+.erreur {
+    color: #c00;
+    font-style: italic;
+}
+.teteTable {
+    font-weight: bold;
+    background-color: #E1FD92;
+}
+#enTete {
+    height: 150px;
+}
+#logo {
+    float: center;
+    margin-top: 10px;
+}
+#BarreWidgets {
+    height: 50px;
+    /* width: 850px; */
+}
+#panier {
+    position: absolute;
+    margin: 5px 0 0 2px;
+}
+.margeHorizontale {
+    margin-left: 28px;
+    margin-right: 5px
+}
+#vuePanier {
+    text-align: left;
+    width: 180px;
+}
+.WidgetTete {
+    width: 180px;
+    margin-left: 20px;
+	margin-top: 20px;
+    font-size: small;
+    float: left;
+    line-height: 25px;
+}
+.terminer { float: right }
+#pied {
+    height: 60px;
+    width: 350px;
+    clear: left;
+}
+#textePied {
+    text-align: left;
+}
+#dividerPied {
+    width: 300px;
+	margin: 0 0;
+}
+#haut {
+    text-align: center;
+    height: 100px;
+}
+#bas {
+    height: 370px;
+}
+#bienvenue { line-height: 1.4em }
+.BoiteCategorie {
+    height: 176px;
+	margin-left: 142px;
+	margin-bottom: 20px;
+}
+/* .BoiteCategorie a { text-decoration: none } */
+.ImageCategorie {
+    margin-bottom: 20px;
+    border:solid 1px #555;
+}
+
+

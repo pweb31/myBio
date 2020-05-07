@@ -1,0 +1,22 @@
+<div id="haut">
+  <div id="bienvenue">
+    <p>Heureux de vous accueillir !<br />
+      Notre boutique en ligne vous offre des produits frais bio qui seront livrés chez vous.<br />
+      Pour choisir une catégorie de produits, cliquez sur l'image correspondante.
+    </p>
+  </div>
+</div>
+<div id="bas">
+  <div class="row mb-4">
+    <ng-container *ngFor="let cat of category; let index=index">
+      <div class="col-md-6">
+        <!-- <div class="card"> -->
+        <a (click)="detailCategorie(cat.id)">
+          <img [src]="cat.url" [alt]="cat.nom" class="ImageCategorie" [title]='cat.nom' />
+        </a>
+        <!--  </div> -->
+      </div>
+      <div class="w-100" *ngIf="(index+1) % 2 === 0"></div>
+    </ng-container>
+  </div>
+</div>
