@@ -10,10 +10,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: "legumes", component: ProduitlegumeComponent },
-  { path: "pains", component: ProduitpainComponent },
-  { path: "viandes", component: ProduitviandeComponent },
-  { path: "fromages", component: ProduitfromageComponent },
+  { path: "legumes/:id", component: ProduitlegumeComponent },
+  { path: "pains/:id", component: ProduitpainComponent },
+  { path: "viandes/:id", component: ProduitviandeComponent },
+  { path: "fromages/:id", component: ProduitfromageComponent },
   { path: "", component: HomeComponent },
   { path: "home", component: HomeComponent },
   { path: "panier", component: PanierComponent },

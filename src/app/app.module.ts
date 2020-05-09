@@ -10,6 +10,7 @@ import { ProduitviandeComponent } from './produits/produitviande/produitviande.c
 import { ProduitlegumeComponent } from './produits/produitlegume/produitlegume.component';
 import { ProduitpainComponent } from './produits/produitpain/produitpain.component';
 import { ProduitfromageComponent } from './produits/produitfromage/produitfromage.component';
+import { ProduitresultComponent } from './shared/produitresult/produitresult.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProduitfromageComponent } from './produits/produitfromage/produitfromag
     ProduitviandeComponent,
     ProduitlegumeComponent,
     ProduitpainComponent,
-    ProduitfromageComponent
+    ProduitfromageComponent,
+    ProduitresultComponent
   ],
   imports: [
     BrowserModule,

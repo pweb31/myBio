@@ -33,16 +33,16 @@ export class HomeComponent implements OnInit {
 
         switch (nomCategorie) {
     case 'FROMAGES':
-        this.router.navigate(["fromages"]);
+        this.router.navigate(["/fromages",id]);
         break;
     case 'PAINS':
-        this.router.navigate(["pains"]);
+        this.router.navigate(["/pains",id]);
         break;
     case 'LEGUMES':
-        this.router.navigate(["legumes"]);
+        this.router.navigate(["/legumes",id]);
         break;
     case 'VIANDES':
-        this.router.navigate(["viandes"]);
+        this.router.navigate(["/viandes",id]);
         break;
     default:
         console.log("No categorie exists!");
