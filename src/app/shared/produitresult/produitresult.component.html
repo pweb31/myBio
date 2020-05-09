@@ -1,17 +1,18 @@
 <table class="table table-striped table-borderless">
   <thead>
     <tr>
-      <th scope="col"><a #categ [attr.data-cat]="fromage" (click)="getCategoryName(categ.dataset.cat)">FROMAGES</a></th>
-      <th scope="col"><a #categ [attr.data-cat]="pain" (click)="getCategoryName(categ.dataset.cat)">PAINS</a></th>
-      <th scope="col"><a #categ [attr.data-cat]="legume" (click)="getCategoryName(categ.dataset.cat)">LEGUMES</a></th>
-      <th scope="col"><a #categ [attr.data-cat]="viande" (click)="getCategoryName(categ.dataset.cat)">VIANDES</a></th>
+      <th scope="col"><a #categ1 [attr.data-cat]="fromage" (click)="getCategoryName(categ1.dataset.cat)" routerLinkActive="active" class="btn btn-light" role="button">FROMAGES</a></th>
+      <th scope="col"><a #categ2 [attr.data-cat]="pain" (click)="getCategoryName(categ2.dataset.cat)" routerLinkActive="active" class="btn btn-light" role="button">PAINS</a></th>
+      <th scope="col"><a #categ3 [attr.data-cat]="legume" (click)="getCategoryName(categ3.dataset.cat)" routerLinkActive="active" class="btn btn-light" role="button">LEGUMES</a></th>
+      <th scope="col"><a #categ4 [attr.data-cat]="viande" (click)="getCategoryName(categ4.dataset.cat)" routerLinkActive="active" class="btn btn-light" role="button">VIANDES</a></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let prod of result.produit; let index=index">
-      <th scope="row" class="align-middle"><img [src]=prod.url [alt]="prod.nom" class="ImageCategorie" [title]='prod.nom'></th>
+      <th scope="row" class="align-middle"><img [src]=prod.url [alt]="prod.nom" class="imgCategorie" [title]='prod.nom'></th>
       <td class="align-middle">{{prod.nom}}<br>{{prod.description}}</td>
-      <td class="align-middle">{{prod.prix}}</td>
+      <!-- <td class="align-middle">{{prod.prix}}</td> -->
+      <td class="align-middle">{{ prod.prix | currency: 'EUR':'symbol':undefined:'fr-FR' }}</td>
       <td class="align-middle"><button type="button" class="btn btn-secondary">Ajouter au panier</button></td>
     </tr>
   </tbody>

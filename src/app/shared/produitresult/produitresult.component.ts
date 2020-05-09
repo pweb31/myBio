@@ -15,17 +15,17 @@ export class ProduitresultComponent implements OnInit {
 
   constructor() { }
 
-   @Input()
+  @Input()
   public result: Categorie;
- @Output()
+  @Output()
   sendRequestData = new EventEmitter(); // Emetteur d'évènement
 
   ngOnInit(): void {
-  	console.log("categorie selectionne du cote parent : ",this.result);
+  	// console.log("categorie selectionne du cote parent : ",this.result);
   }
 
   getCategoryName(catName:string) {
-  	console.log("categorie nom : "+catName);
+  	console.log("categorie nom cote fils : "+catName);
   	this.sendRequestData.emit(catName);
   }
 

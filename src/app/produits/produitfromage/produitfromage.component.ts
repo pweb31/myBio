@@ -11,7 +11,7 @@ export class ProduitfromageComponent implements OnInit {
   id:number;
   fromageCategorie={};
   categorieTrouve;
-  constructor(private route:ActivatedRoute,private categorieService: CategoriesmockService) { }
+  constructor(private route:ActivatedRoute, private router : Router, private categorieService: CategoriesmockService) { }
 
   ngOnInit(): void {
   	this.id=+this.route.snapshot.params['id'];
@@ -19,14 +19,15 @@ export class ProduitfromageComponent implements OnInit {
   }
 
   processReq(message: any){
-    console.log("message du fils :",message);
+    console.log("message du composant fils cote pere :",message);
      this.categorieService.getCategoriesByNom(message).subscribe(
        data=>{
        this.categorieTrouve=data;
-       console.log("categorie choisie est  : ", this.categorieTrouve);
-       console.log("index choisi est  : ", this.categorieTrouve.id);
+       let url :string = "/"+this.categorieTrouve[0].nom.toLowerCase();
+       let id :number = this.categorieTrouve[0].id;
+        this.router.navigate([url,id]);
      },err=>{
-
+         console.log("erreur obtenue :",err);
      });
      
 

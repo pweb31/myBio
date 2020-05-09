@@ -9,7 +9,7 @@ import { CategoriesmockService } from '../../services/categoriesmock.service';
 })
 export class ProduitviandeComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute,private viandeService: CategoriesmockService) { }
+  constructor(private route:ActivatedRoute, private router : Router, private viandeService: CategoriesmockService) { }
 
   id:number;
   viandeCategorie={};
@@ -25,8 +25,9 @@ export class ProduitviandeComponent implements OnInit {
     this.viandeService.getCategoriesByNom(message).subscribe(
        data=>{
        this.categorieTrouve=data;
-       console.log("categorie choisie est  : ", this.categorieTrouve);
-       console.log("index choisi est  : ", this.categorieTrouve.id);
+       let url :string = "/"+this.categorieTrouve[0].nom.toLowerCase();
+       let id :number = this.categorieTrouve[0].id;
+        this.router.navigate([url,id]);
      },err=>{
 
      });
