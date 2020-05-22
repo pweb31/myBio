@@ -4,6 +4,7 @@ import { NgModule, LOCALE_ID,  } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PanierComponent } from './panier/panier.component';
@@ -31,6 +32,7 @@ registerLocaleData(localeFr, 'fr-FR');
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [
