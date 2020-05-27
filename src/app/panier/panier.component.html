@@ -1,1 +1,39 @@
-<p>panier works!</p>
+
+
+<!--Cart-->
+<h4 *ngIf="cartItems.length === 0" class="cartheader ml-4"  >Votre panier est vide.</h4>
+<h4 *ngIf="cartItems.length >=1" class="cartheader ml-4"  >Votre panier contient {{cartItems.length}} articles.</h4>
+<div *ngIf="cartItems.length !== 0" class="cart-overlay">
+ <!--  <h2 class="cartHeading">Cart Items</h2> -->
+  <div class="cart" style="display: flex;">
+    <div class="cart-content">
+      <!--cart item-->
+      <div class="cart-item" *ngFor="let item of cartItems">
+        <img  src="{{item.url}}" class="product-img" alt="item">
+        <div>
+          <h4>{{item.name}}</h4>
+          <h4 style="padding-top: 15px;">{{item.prix}}
+            <!-- <del class="delPrice">{{item.prix}}</del> -->
+            <span class="discPrice ml-4">{{item.description}}</span>
+          </h4>
+        </div>
+        <div class="counter mx-auto my-auto">
+          <!-- <i class="fas fa-plus-circle" (click)="handleIncrement(item)"></i> -->
+          <i class="fa fa-plus mt-4" aria-hidden="true" (click)="handleIncrement(item)"></i>
+          <p class="item-amount mt-4">{{item.quantity}}</p>
+          <!-- <i class="fas fa-minus-circle" (click)="handleDecriment(item)"></i> -->
+          <i class="fa fa-minus mt-4" aria-hidden="true" (click)="handleDecriment(item)"></i>
+        </div>
+        <span class="remove-item" class="makebold" style="cursor:pointer" (click)="handelRemoveItem(item)" >Remove</span>
+      </div>
+      <!--End cart item-->
+    </div>
+   <!--  <div class="cart-footer">
+      <h3 class="priceDetails">Price Details</h3>
+      <h3 class="price">Price :  <span class="cart-price">${{cartTotalValue.totalAmount}}</span></h3>
+      <h3 class="discountPrice">Discount :  <span class="cart-discountPrice">${{cartTotalValue.Discount}}</span></h3>
+      <h3 class="totalPAyabile">Total Payabile :  <span class="cart-totalPAyabile">${{cartTotalValue.totalAmount - cartTotalValue.Discount }}</span></h3>
+    </div> -->
+</div>
+</div>
+<!--End of Cart-->

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Categorie } from '../../models/categorie';
+import { PanierService } from '../../services/panier.service';
 
 @Component({
   selector: 'app-produitresult',
@@ -13,7 +14,7 @@ export class ProduitresultComponent implements OnInit {
 	viande = 'VIANDES';
 	categorieName:string
 
-  constructor() { }
+  constructor(private panier: PanierService) { }
 
   @Input()
   public result: Categorie;
@@ -31,6 +32,10 @@ export class ProduitresultComponent implements OnInit {
 
   sendEvent(){
   	this.sendRequestData.emit(this.categorieName);
+  }
+
+  handelAddToCart = (product) => {
+    this.panier.addItemsToCart(product);
   }
 
 }

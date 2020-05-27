@@ -13,7 +13,7 @@
       <td class="align-middle">{{prod.nom}}<br>{{prod.description}}</td>
       <!-- <td class="align-middle">{{prod.prix}}</td> -->
       <td class="align-middle">{{ prod.prix | currency: 'EUR':'symbol':undefined:'fr-FR' }}</td>
-      <td class="align-middle"><button type="button" class="btn btn-secondary">Ajouter au panier</button></td>
+      <td class="align-middle"><button type="button" class="btn btn-secondary" (click)="handelAddToCart(prod)">Ajouter au panier</button></td>
     </tr>
   </tbody>
 </table>

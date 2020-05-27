@@ -11,7 +11,7 @@
     <ng-container *ngFor="let cat of category; let index=index">
       <div class="col-md-6">
         <!-- <div class="card"> -->
-        <a (click)="detailCategorie(cat.id)">
+        <a (click)="detailCategorie(cat.id)" style="cursor:pointer">
           <img [src]="cat.url" [alt]="cat.nom" class="ImageCategorie" [title]='cat.nom' />
         </a>
         <!--  </div> -->

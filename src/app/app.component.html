@@ -4,21 +4,24 @@
       <div class="WidgetTete" id="vuePanier">
         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
         <span>
-          <span *ngIf="panier.nbItems == 0">
+          <span *ngIf="panier == 0">
             0
           </span>
-          <span *ngIf="panier.nbItems != 0">
-            panier.nbItems
+          <span *ngIf="panier != 0">
+            {{panier}}
           </span>
-          <span *ngIf="panier.nbItems >= 1">
+          <span *ngIf="panier >= 1">
             articles
           </span>
-          <span *ngIf="panier.nbItems == 0">
+          <span *ngIf="panier == 0">
             article
           </span>
         </span>
-        <a routerLink="panier" *ngIf="panier.nbItems == 0">
+        <a routerLink="/panier" *ngIf="panier != 0">
           Panier
+        </a>&nbsp;
+        <a routerLink="/achatterminer" *ngIf="panier != 0">
+          Terminer les achats
         </a>
       </div>
       <div class="WidgetTete" id="terminer">

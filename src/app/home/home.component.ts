@@ -4,7 +4,7 @@ import { Observable,from } from 'rxjs';
 import { CategoriesmockService } from '../services/categoriesmock.service';
 import { CategoryService } from '../services/category.service';
 import { Categorie } from '../models/categorie';
-import { Category } from '../models/categorie';
+import { Category } from '../models/category';
 
 @Component({
   selector: 'app-home',
