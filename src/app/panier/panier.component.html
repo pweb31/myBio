@@ -2,7 +2,8 @@
 
 <!--Cart-->
 <h4 *ngIf="cartItems.length === 0" class="cartheader ml-4"  >Votre panier est vide.</h4>
-<h4 *ngIf="cartItems.length >=1" class="cartheader ml-4"  >Votre panier contient {{cartItems.length}} articles.</h4>
+<!-- <h4 *ngIf="cartItems.length >=1" class="cartheader ml-4"  >Votre panier contient {{cartItems.length}} articles.</h4> -->
+<h4 *ngIf="cartItems.length >=1" class="cartheader ml-4"  >Votre panier contient {{prods}} articles.</h4>
 <div *ngIf="cartItems.length !== 0" class="cart-overlay">
  <!--  <h2 class="cartHeading">Cart Items</h2> -->
   <div class="cart" style="display: flex;">

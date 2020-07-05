@@ -1,1 +1,96 @@
-<p>achattermine works!</p>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2 style="margin-left: 35px;">Enregistrement</h2>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col-md-10">
+        <p>Pour acheter les articles de votre panier merci de fournir les informations ci-dessous :</p>
+    </div>
+</div>
+<div class="row m-3 results">
+<div class="card-biofood col-md-6 ml-3 mr-3">
+    <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label class="float-left">Nom</label>
+                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstName.errors.required">Le nom est est obligatoire</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="float-left">Prenom</label>
+                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lastName.errors.required">Le prénom est est obligatoire</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="float-left">Email</label>
+                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email obligatoire</div>
+                    <div *ngIf="f.email.errors.email">Veuillez saisir un email valide</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="float-left">Téléphone</label>
+                <input type="text" formControlName="tel" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tel.errors }" />
+                <div *ngIf="submitted && f.tel.errors" class="invalid-feedback">
+                    <div *ngIf="f.tel.errors.required">Le téléphone est est obligatoire</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="float-left">Adresse</label>
+                <input type="text" formControlName="adr" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.adr.errors }" />
+                <div *ngIf="submitted && f.adr.errors" class="invalid-feedback">
+                    <div *ngIf="f.adr.errors.required">L'adresse est est obligatoire</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="float-left">Carte de crédit</label>
+                <input type="text" formControlName="cb" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cb.errors }" />
+                <div *ngIf="submitted && f.cb.errors" class="invalid-feedback">
+                    <div *ngIf="f.cb.errors.required">Saisissez votre numéro de carte bancaire</div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary mr-1">Register</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="card-biofood mr-3 col-md-6">
+    <div class="card-body">
+        <div>
+            <ul>
+                <li class="float-left">Livraison le lendemain garantie.</li>
+                <li class="float-left">Des frais de {{ frais | currency: 'EUR':'symbol':undefined:'fr-FR' }} sont appliqués à toutes les commandes</li>
+            </ul>
+        </div>
+        <table id="BoitePrix" class="float-right mt-5 mr-5">
+            <tr>
+                <td>Sous total :</td>
+                <td class="colonneEnregistrementPrix">
+                    {{ soustotal | currency: 'EUR':'symbol':undefined:'fr-FR' }}</td>
+            </tr>
+            <tr>
+                <td>Frais :</td>
+                <td class="colonneEnregistrementPrix">
+                    {{ frais | currency: 'EUR':'symbol':undefined:'fr-FR' }}</td>
+            </tr>
+            <tr>
+                <td class="total">Total :</td>
+                <td class="total colonneEnregistrementPrix">
+                    {{ total | currency: 'EUR':'symbol':undefined:'fr-FR' }}</td>
+            </tr>
+        </table>
+
+        
+    </div>
+</div>
+</div>
