@@ -8,6 +8,7 @@ import { PanierComponent } from "./panier/panier.component";
 import { AchattermineComponent } from "./achattermine/achattermine.component"
 import { PagenotfoundComponent } from "./pagenotfound/pagenotfound.component";
 import { Routes, RouterModule } from '@angular/router';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,8 @@ const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "panier", component: PanierComponent },
   { path: "achatterminer", component: AchattermineComponent },
+  // { path: "confirmation", component:ConfirmationComponent},
+  { path: "confirmation/:firstname/:lastname/:email/:adr/:tel", component:ConfirmationComponent},
   { path: "**", component: PagenotfoundComponent },
 
 ];

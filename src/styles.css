@@ -432,3 +432,55 @@ font-weight: bold;
 .total { border-top: 1px solid #444 }
 
 /*------------Fin terminer achat ---------------*/
+
+/*--------------CSS confirmation achat----------------*/
+#TexteConfirmation {
+  margin: 0 20px 20px;
+  padding: 10px;
+  background-color: #93FD95;
+  float: left;
+  border-radius: 4px;
+}
+.colonneResume {
+  margin-top: 15px;
+  width: 50%;
+  float: left;
+}
+.TableDetails { text-align: left }
+.TableDetails th { padding: 5px 10px }
+.TableDetails td {
+  padding: 5px 10px 5px 20px;
+  font-size: small;
+  font-family: "Courier New", courier, monospace;
+}
+
+#tableResumeCommande { width: 100% }
+#TableAdresseLivraison {
+    width: 70%;
+    margin-left: 15%;
+}
+#TableAdresseLivraison td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.colonneQuantite {
+    text-align: center;
+    width: 62px;
+}
+.colonneConfirmationPrix {
+    width: 90px;
+    font-weight: normal;
+}
+#fraisGauche {
+    text-align: right;
+    padding: 0;
+}
+#fraisDroite { padding: 0 20px }
+#totalCellLeft {
+    text-align: right;
+    padding: 0;
+}
+#totalDroite { padding: 0 20px }
+#dateTraitement { padding: 2px 0 10px 20px }
+
+/*------------Fin confirmation achat ---------------*/

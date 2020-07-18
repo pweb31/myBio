@@ -1,0 +1,65 @@
+<div id="colonneUnique">
+    <p id="TexteConfirmation">
+        <strong>Votre commande a été traitée avec succès et sera livrée dans les 24 heures.</strong>
+        <br><br>
+        Merci de noter votre no de confirmation :  
+        <!-- <strong>${commande.confirmation}</strong> -->
+        <!-- <strong>136968402</strong> -->
+        <strong>{{numCommande}}</strong>
+        <br>
+        Contactez Chez-bioFood31.com en cas de difficultés.
+        <br><br>
+        Merci de votre visite!
+    </p>
+    <div class="colonneResume" >
+        <table id="tableResumeCommande" class="TableDetails">
+            <tr class="enTete">
+                <th colspan="3">Résumé de votre commande</th>
+            </tr>
+            <tr class="teteTable">
+                <td>Produit</td>
+                <td>Quantité</td>
+                <td>Prix</td>
+            </tr>
+            <tr *ngFor="let prod of cartItems; let index=index">
+                <td class="align-middle">{{prod.nom}}</td>
+                <td class="align-middle">{{prod.quantity}}</td>
+                <td class="align-middle">{{ prod.prix | currency: 'EUR':'symbol':undefined:'fr-FR' }}</td>
+            </tr>
+            <tr><td colspan="3" style="padding: 0 20px"><hr></td></tr>
+            <tr>
+                <td colspan="2" id="fraisGauche"><strong>Frais :</strong></td>
+                <td id="fraisDroite">
+                    {{ frais | currency: 'EUR':'symbol':undefined:'fr-FR' }}</td>
+            </tr>
+            <tr>
+                <td colspan="2" id="totalCellLeft"><strong>Total :</strong></td>
+                <td id="totalDroite">
+                    {{ total | currency: 'EUR':'symbol':undefined:'fr-FR' }}</td>
+            </tr>
+            <tr><td colspan="3" style="padding: 0 20px"><hr></td></tr>
+            <tr>
+                <td colspan="3" id="dateTraitement"><strong>Date de traitement :</strong>
+                  </td>
+            </tr>
+        </table>
+    </div>
+    <div class="colonneResume" >
+        <table id="TableAdresseLivraison" class="TableDetails">
+            <tr class="enTete">
+                <th colspan="3">Adresse de livraison</th>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    {{firstname}}  {{lastname}}
+                    <br>
+                    {{adresse}}
+                    <hr>
+                    <strong>Mail :</strong> {{email}}
+                    <br>
+                    <strong>Téléphone :</strong> {{tel}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
