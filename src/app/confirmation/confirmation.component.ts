@@ -19,6 +19,7 @@ export class ConfirmationComponent implements OnInit {
   email;
   tel;
   numCommande;
+  curDate=new Date();
   ;
   constructor(private panier: PanierService, private route: ActivatedRoute) {
     this.cartItems = this.panier.getItemsFromCart();

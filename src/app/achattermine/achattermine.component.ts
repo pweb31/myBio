@@ -15,6 +15,8 @@ export class AchattermineComponent implements OnInit {
   frais:number = 3.00;
   soustotal:number = 0.00;
   total:number = 0.00;
+  // Numero de téléphone à dix chiffres commençant par 06 ou 07
+  mobNumberPattern = "^0[6-7][\d]{8}$"; 
   constructor(private formBuilder: FormBuilder,private panier: PanierService, private router: Router) { 
     this.cartItems = this.panier.getItemsFromCart();
     this.cartItems.forEach(element => console.log('product price : ',element.prix));
@@ -29,7 +31,8 @@ export class AchattermineComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      tel: ['', Validators.required],
+      // tel: ['', [Validators.required, Validators.pattern(new RegExp("^0[6-7][\d]{8}$"))]],
+      tel: ['', [Validators.required, Validators.pattern("0[6-7][0-9 ]{8}")]],
       adr: ['', Validators.required],
       cb: ['', Validators.required]
   });

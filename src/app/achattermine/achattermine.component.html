@@ -41,6 +41,7 @@
                 <input type="text" formControlName="tel" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.tel.errors }" />
                 <div *ngIf="submitted && f.tel.errors" class="invalid-feedback">
                     <div *ngIf="f.tel.errors.required">Le téléphone est est obligatoire</div>
+                    <div *ngIf="f.tel.errors.pattern">Le numéro doit commencer par 06 ou 07 et avoir 10 chiffres.</div>
                 </div>
             </div>
             <div class="form-group">
